@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Personalize Your Gift - Digital Gifts Paradise</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Bricolage+Grotesque:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "on-secondary-fixed-variant": "#613f2c",
+                            "on-secondary": "#ffffff",
+                            "surface-tint": "#9e4037",
+                            "on-tertiary-fixed-variant": "#4f4064",
+                            "on-surface": "#2b1613",
+                            "surface": "#fff8f6",
+                            "on-tertiary": "#ffffff",
+                            "secondary-fixed-dim": "#edbca4",
+                            "error": "#ba1a1a",
+                            "surface-bright": "#fff8f6",
+                            "tertiary-fixed": "#eddcff",
+                            "secondary-fixed": "#ffdbca",
+                            "on-primary-fixed": "#410002",
+                            "on-error": "#ffffff",
+                            "on-secondary-container": "#7a5541",
+                            "inverse-surface": "#422a26",
+                            "primary-fixed-dim": "#ffb4aa",
+                            "surface-dim": "#f8d1cb",
+                            "on-tertiary-fixed": "#221536",
+                            "primary": "#9e4037",
+                            "surface-container-lowest": "#ffffff",
+                            "on-primary-container": "#76231d",
+                            "tertiary": "#67587d",
+                            "surface-container": "#ffe9e5",
+                            "surface-variant": "#ffdad4",
+                            "background": "#fff8f6",
+                            "tertiary-container": "#b7a5cf",
+                            "inverse-on-surface": "#ffedea",
+                            "outline-variant": "#dcc0bd",
+                            "secondary-container": "#ffcdb4",
+                            "on-error-container": "#93000a",
+                            "tertiary-fixed-dim": "#d2bfea",
+                            "on-surface-variant": "#564240",
+                            "on-primary": "#ffffff",
+                            "on-tertiary-container": "#483a5d",
+                            "outline": "#89726f",
+                            "on-background": "#2b1613",
+                            "inverse-primary": "#ffb4aa",
+                            "surface-container-low": "#fff0ee",
+                            "surface-container-highest": "#ffdad4",
+                            "primary-container": "#ff8b7e",
+                            "primary-fixed": "#ffdad5",
+                            "on-secondary-fixed": "#2f1506",
+                            "surface-container-high": "#ffe2dd",
+                            "secondary": "#7c5642",
+                            "error-container": "#ffdad6",
+                            "on-primary-fixed-variant": "#7f2922"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "1rem",
+                            "lg": "2rem",
+                            "xl": "3rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "gutter": "24px",
+                            "xs": "4px",
+                            "base": "8px",
+                            "md": "24px",
+                            "sm": "12px",
+                            "lg": "40px",
+                            "xl": "64px",
+                            "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                            "headline-md": ["Quicksand"],
+                            "label-caps": ["Be Vietnam Pro"],
+                            "body-sm": ["Quicksand"],
+                            "accent-text": ["Bricolage Grotesque"],
+                            "display-mobile": ["Quicksand"],
+                            "display-lg": ["Quicksand"],
+                            "body-lg": ["Quicksand"]
+                    },
+                    "fontSize": {
+                            "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                            "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                            "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                            "accent-text": ["20px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                            "display-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                            "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .glass-panel { background: rgba(255, 253, 245, 0.8); backdrop-filter: blur(10px); }
+        .ambient-shadow { box-shadow: 0 20px 50px rgba(141, 110, 99, 0.08); }
+        .sticker-shadow { box-shadow: 0 2px 4px rgba(141, 110, 99, 0.15); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-sm text-body-sm relative overflow-x-hidden">
+<!-- Top Navigation (Shared Component Shell) -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-[0_20px_50px_rgba(141,110,99,0.08)] flex justify-between items-center w-full px-gutter py-4 sticky top-0 z-50">
+<div class="flex items-center gap-md">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Digital Gifts Paradise ✨</span>
+</div>
+<nav class="hidden md:flex gap-md items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Digital Scraps</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Digital Bouquets</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 hover:scale-105 transition-transform duration-200 ease-out" href="#">Customize Gift</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Gift Cards</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Playlists</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="hidden md:flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform duration-200 ease-out">
+                Create a Gift ✨
+            </button>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-primary hover:scale-105 cursor-pointer transition-transform" data-icon="favorite">favorite</span>
+<span class="material-symbols-outlined text-primary hover:scale-105 cursor-pointer transition-transform" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="flex-grow max-w-container-max mx-auto w-full px-gutter py-lg flex flex-col gap-lg">
+<!-- Step Indicator -->
+<section class="w-full">
+<div class="flex justify-between items-center bg-surface-container-low rounded-lg p-md ambient-shadow overflow-x-auto">
+<div class="flex items-center gap-2 opacity-50 shrink-0">
+<div class="w-8 h-8 rounded-full bg-outline-variant text-on-surface-variant flex items-center justify-center font-label-caps">01</div>
+<span class="font-label-caps hidden md:inline">Recipient</span>
+</div>
+<div class="h-px bg-outline-variant w-8 md:w-16 shrink-0"></div>
+<div class="flex items-center gap-2 opacity-50 shrink-0">
+<div class="w-8 h-8 rounded-full bg-outline-variant text-on-surface-variant flex items-center justify-center font-label-caps">02</div>
+<span class="font-label-caps hidden md:inline">Gift</span>
+</div>
+<div class="h-px bg-outline-variant w-8 md:w-16 shrink-0"></div>
+<div class="flex items-center gap-2 text-primary shrink-0">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-caps shadow-lg">03</div>
+<span class="font-label-caps font-bold">Personalize</span>
+</div>
+<div class="h-px bg-outline-variant w-8 md:w-16 shrink-0"></div>
+<div class="flex items-center gap-2 opacity-50 shrink-0">
+<div class="w-8 h-8 rounded-full bg-outline-variant text-on-surface-variant flex items-center justify-center font-label-caps">04</div>
+<span class="font-label-caps hidden md:inline">Preview</span>
+</div>
+<div class="h-px bg-outline-variant w-8 md:w-16 shrink-0"></div>
+<div class="flex items-center gap-2 opacity-50 shrink-0">
+<div class="w-8 h-8 rounded-full bg-outline-variant text-on-surface-variant flex items-center justify-center font-label-caps">05</div>
+<span class="font-label-caps hidden md:inline">Send</span>
+</div>
+</div>
+</section>
+<!-- Main Content Area -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg relative">
+<!-- Customization Options (Left Side) -->
+<div class="lg:col-span-7 flex flex-col gap-md z-10">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Make it yours ✨</h1>
+<!-- Option Cards Container -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Photos & Video -->
+<div class="bg-surface-container rounded-lg p-md ambient-shadow border border-outline-variant/30 hover:border-primary/50 transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[100px]" data-icon="photo_camera">photo_camera</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined" data-icon="add_a_photo">add_a_photo</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Photos &amp; Video</h3>
+<p class="text-on-surface-variant mb-4">Upload cherished memories to feature in your digital scrapbook.</p>
+<button class="px-4 py-2 bg-surface text-primary border-2 border-primary rounded-full font-label-caps hover:bg-primary hover:text-on-primary transition-colors">Upload Media</button>
+</div>
+<!-- Personal Message -->
+<div class="bg-surface-container rounded-lg p-md ambient-shadow border border-outline-variant/30 hover:border-primary/50 transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[100px]" data-icon="edit_document">edit_document</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Add a Note</h3>
+<p class="text-on-surface-variant mb-4">Write a heartfelt message using our handwritten fonts.</p>
+<button class="px-4 py-2 bg-surface text-primary border-2 border-primary rounded-full font-label-caps hover:bg-primary hover:text-on-primary transition-colors">Write Note</button>
+</div>
+<!-- Stickers & Decor -->
+<div class="bg-surface-container rounded-lg p-md ambient-shadow border border-outline-variant/30 hover:border-primary/50 transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[100px]" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined" data-icon="interests">interests</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Stickers &amp; Decor</h3>
+<p class="text-on-surface-variant mb-4">Drag and drop digital stickers, washi tape, and doodles.</p>
+<button class="px-4 py-2 bg-surface text-primary border-2 border-primary rounded-full font-label-caps hover:bg-primary hover:text-on-primary transition-colors">Browse Stickers</button>
+</div>
+<!-- Background Music -->
+<div class="bg-surface-container rounded-lg p-md ambient-shadow border border-outline-variant/30 hover:border-primary/50 transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[100px]" data-icon="music_note">music_note</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-4">
+<span class="material-symbols-outlined" data-icon="queue_music">queue_music</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Soundtrack</h3>
+<p class="text-on-surface-variant mb-4">Select a cozy background track to play when they open it.</p>
+<button class="px-4 py-2 bg-surface text-primary border-2 border-primary rounded-full font-label-caps hover:bg-primary hover:text-on-primary transition-colors">Pick Music</button>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-center border-t border-outline-variant/30 pt-md">
+<button class="text-on-surface-variant font-label-caps hover:text-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span> Back
+                    </button>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps hover:scale-105 transition-transform flex items-center gap-2 shadow-lg">
+                        Next: Preview <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Mobile Preview (Right Side) -->
+<div class="lg:col-span-5 relative flex justify-center items-start lg:sticky lg:top-[120px] h-[600px]">
+<!-- Decorative Elements Behind Phone -->
+<div class="absolute -right-10 top-20 w-32 h-32 bg-tertiary-container rounded-full blur-3xl opacity-50"></div>
+<div class="absolute -left-10 bottom-20 w-40 h-40 bg-primary-container rounded-full blur-3xl opacity-50"></div>
+<!-- Phone Frame -->
+<div class="w-[320px] h-[650px] bg-surface-container-lowest rounded-[40px] border-[8px] border-outline-variant/50 ambient-shadow relative overflow-hidden flex flex-col">
+<!-- Notch -->
+<div class="absolute top-0 inset-x-0 h-6 flex justify-center z-20">
+<div class="w-32 h-full bg-outline-variant/50 rounded-b-xl"></div>
+</div>
+<!-- Screen Content (The Gift Preview) -->
+<div class="flex-grow bg-[#FDFBF7] relative overflow-y-auto overflow-x-hidden pt-10 pb-4 px-4 custom-scrollbar">
+<!-- Header -->
+<div class="text-center mb-6">
+<p class="font-label-caps text-secondary tracking-widest text-[10px]">A DIGITAL HUG FOR</p>
+<h2 class="font-accent-text text-[28px] text-primary mt-1">Sarah &amp; Alex</h2>
+</div>
+<!-- Polaroid Style Card -->
+<div class="bg-white p-3 rounded-md sticker-shadow rotate-[-2deg] mb-8 relative">
+<!-- Washi Tape -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 bg-secondary/20 rotate-[5deg] z-10 backdrop-blur-sm shadow-sm"></div>
+<div class="aspect-[4/5] bg-surface-variant mb-3 rounded overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A candid, warm lifestyle photograph of a young couple laughing together in a sunlit park, serving as the main photo on a digital scrapbook page. The lighting is soft and golden hour, enhancing the warm, nostalgic, light-mode aesthetic. The image is framed within a digital polaroid interface with soft drop shadows and cozy pastel accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPUxCOoO6p1nAv6IuoxEVT07JSEsY4hTwTO8J5Rxfx1fj31TkbTNt0U-3mH3mSQHMGEWAxR5yqqNTFrNqqVdXjMA9SZtXah7E02CI8fA7daxPW-1WD3NMpP1jsgbHbv8EzpFxcuVz0IUfTKl4IMhQUiD5WmwxR7h6M1r4PmoDt7yAOkEGxAfxCho2980KkaFu6uw-ZwkWt8J4ZMi7Sx_k8ccxepRXmvKixQU0bkCu76MLMEXOdyHoHfQ"/>
+</div>
+<p class="font-accent-text text-center text-on-surface text-lg">Happy Anniversary! 🥂</p>
+</div>
+<!-- Message Area -->
+<div class="bg-secondary-container/30 p-4 rounded-xl border border-secondary/20 relative mb-6">
+<!-- Star Sticker -->
+<div class="absolute -right-2 -top-2 w-8 h-8 bg-tertiary text-on-tertiary rounded-full sticker-shadow flex items-center justify-center rotate-12">
+<span class="material-symbols-outlined text-sm" data-icon="star">star</span>
+</div>
+<p class="font-body-sm text-on-surface-variant italic leading-relaxed">
+                                "Wishing you both another year of wonderful adventures. Cannot wait to celebrate with you next month!"
+                            </p>
+<p class="font-label-caps text-primary mt-3 text-right">- Love, Jamie</p>
+</div>
+<!-- Bottom 'Open Gift' button placeholder in preview -->
+<div class="flex justify-center mt-auto mb-4">
+<div class="bg-primary/10 text-primary px-6 py-2 rounded-full font-label-caps flex items-center gap-2 border border-primary/20">
+<span class="material-symbols-outlined text-sm" data-icon="play_circle">play_circle</span> 'Our Song' playing
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest border-t-2 border-outline-variant/30 w-full px-gutter py-xl flex flex-col md:flex-row justify-between items-center gap-md mt-auto">
+<div class="font-accent-text text-accent-text text-on-surface">Digital Gifts Paradise ✨</div>
+<div class="font-body-sm text-body-sm text-secondary dark:text-secondary-fixed-dim">© 2024 Digital Gifts Paradise — A tiny digital hug.</div>
+<div class="flex gap-4">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline opacity-80 hover:opacity-100 hover:text-primary transition-colors duration-200" href="#">Help Center</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline opacity-80 hover:opacity-100 hover:text-primary transition-colors duration-200" href="#">About Us</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline opacity-80 hover:opacity-100 hover:text-primary transition-colors duration-200" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline opacity-80 hover:opacity-100 hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
+</div>
+</footer>
+<style>
+        /* Custom Scrollbar for the preview phone */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(141, 110, 99, 0.2);
+            border-radius: 4px;
+        }
+    </style>
+</body></html>

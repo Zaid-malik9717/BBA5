@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gift Cards | Digital Gifts Paradise</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@700&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400&amp;family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed-variant": "#613f2c",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#9e4037",
+                        "on-tertiary-fixed-variant": "#4f4064",
+                        "on-surface": "#2b1613",
+                        "surface": "#fff8f6",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#edbca4",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fff8f6",
+                        "tertiary-fixed": "#eddcff",
+                        "secondary-fixed": "#ffdbca",
+                        "on-primary-fixed": "#410002",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#7a5541",
+                        "inverse-surface": "#422a26",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "surface-dim": "#f8d1cb",
+                        "on-tertiary-fixed": "#221536",
+                        "primary": "#9e4037",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#76231d",
+                        "tertiary": "#67587d",
+                        "surface-container": "#ffe9e5",
+                        "surface-variant": "#ffdad4",
+                        "background": "#fff8f6",
+                        "tertiary-container": "#b7a5cf",
+                        "inverse-on-surface": "#ffedea",
+                        "outline-variant": "#dcc0bd",
+                        "secondary-container": "#ffcdb4",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#d2bfea",
+                        "on-surface-variant": "#564240",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#483a5d",
+                        "outline": "#89726f",
+                        "on-background": "#2b1613",
+                        "inverse-primary": "#ffb4aa",
+                        "surface-container-low": "#fff0ee",
+                        "surface-container-highest": "#ffdad4",
+                        "primary-container": "#ff8b7e",
+                        "primary-fixed": "#ffdad5",
+                        "on-secondary-fixed": "#2f1506",
+                        "surface-container-high": "#ffe2dd",
+                        "secondary": "#7c5642",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#7f2922"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "container-max": "1200px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Quicksand"],
+                        "label-caps": ["Be Vietnam Pro"],
+                        "body-sm": ["Quicksand"],
+                        "accent-text": ["Bricolage Grotesque"],
+                        "display-mobile": ["Quicksand"],
+                        "display-lg": ["Quicksand"],
+                        "body-lg": ["Quicksand"]
+                    },
+                    fontSize: {
+                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "700" }],
+                        "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "500" }],
+                        "accent-text": ["20px", { lineHeight: "1.2", fontWeight: "400" }],
+                        "display-mobile": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .sticker-shadow { box-shadow: 1px 1px 0px rgba(141, 110, 99, 0.2); }
+        .ambient-shadow { box-shadow: 0 20px 40px -10px rgba(141, 110, 99, 0.08); }
+        .glass-overlay { background: rgba(255, 253, 245, 0.8); backdrop-filter: blur(10px); }
+        
+        /* Squishy Button Animation */
+        .btn-squish { transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-squish:hover { transform: scale(1.02); }
+        .btn-squish:active { transform: scale(0.95); }
+
+        /* Custom Scrollbar for sidebars */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #dcc0bd; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-gutter py-4 sticky top-0 z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-[0_20px_50px_rgba(141,110,99,0.08)]">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
+            Digital Gifts Paradise ✨
+        </div>
+<nav class="hidden md:flex gap-md font-label-caps text-label-caps">
+<a class="text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Digital Scraps</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Digital Bouquets</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Customize Gift</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 hover:scale-105 transition-transform duration-200 ease-out scale-95" href="#">Gift Cards</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Playlists</a>
+</nav>
+<div class="flex items-center gap-sm">
+<button class="text-on-surface hover:text-primary transition-colors flex items-center justify-center p-2">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="text-on-surface hover:text-primary transition-colors flex items-center justify-center p-2">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<button class="hidden md:flex bg-primary text-on-primary px-4 py-2 rounded-full font-label-caps text-label-caps btn-squish items-center gap-xs">
+                Create a Gift ✨
+            </button>
+</div>
+</header>
+<main class="flex-1 w-full max-w-container-max mx-auto px-gutter py-xl flex flex-col lg:flex-row gap-lg relative">
+<!-- Decorative SVG Doodles (Absolute) -->
+<svg class="absolute top-0 right-10 w-16 h-16 text-secondary-fixed opacity-50 -z-10" fill="currentColor" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z"></path>
+</svg>
+<!-- Left Content: Title & Grid -->
+<div class="flex-1 flex flex-col gap-lg">
+<header class="flex flex-col gap-sm relative">
+<h1 class="font-display-mobile md:font-display-lg text-display-mobile md:text-display-lg text-primary relative inline-block">
+                    Let them pick the <br/> perfect gift.
+                    <!-- Decorative Tape -->
+<div class="absolute -top-4 -left-4 w-12 h-4 bg-tertiary-fixed opacity-80 rotate-[-15deg] sticker-shadow"></div>
+</h1>
+<!-- Categories/Chips -->
+<div class="flex flex-wrap gap-sm mt-4">
+<button class="px-4 py-2 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps btn-squish sticker-shadow">Birthday</button>
+<button class="px-4 py-2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps btn-squish sticker-shadow">Friendship</button>
+<button class="px-4 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps btn-squish sticker-shadow">Love</button>
+<button class="px-4 py-2 rounded-full bg-surface-variant text-on-surface-variant font-label-caps text-label-caps btn-squish border border-outline-variant">Just Because</button>
+</div>
+</header>
+<!-- Card Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<!-- Card 1 -->
+<div class="group relative bg-surface-container-lowest rounded-lg p-3 ambient-shadow cursor-pointer btn-squish border border-outline-variant/30 flex flex-col aspect-[4/5]">
+<div class="w-full flex-1 rounded-[1.5rem] overflow-hidden relative">
+<div class="bg-cover bg-center w-full h-full absolute inset-0" data-alt="A trendy aesthetic gift card design for Gen Z featuring soft, dreamy gradient colors of peach, lavender, and warm pink. The design incorporates a subtle grainy film texture and playful geometric shapes floating in the background, creating a modern, minimalist nostalgic vibe." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzI_uJ3va8qIIdPD6yM5ITcrB5yWIkg4mbgA3RcNDlfQgB5X5MLR3AUTVAncSVMlvnSDdn2m6bWLK5tccdHwDAFY0W17Qg01K9IolQXf9Fmfmb366UIoY_RvdGiOQCsIIs1bOHkasVfEjvWlqMoxd-kMv2WSEnfL6ASYOo6fF25QU2VcifljEkZR6mc-1W381CiJX7SiLWdB5CoWwAmZ2wUNfLElUELCURKSlKeyCzELk6fvtcRodgpg')"></div>
+<div class="absolute top-3 right-3 bg-surface/90 px-3 py-1 rounded-full font-label-caps text-label-caps text-primary sticker-shadow backdrop-blur-sm">Featured</div>
+</div>
+<div class="mt-4 px-2 flex justify-between items-end mb-2">
+<div class="flex flex-col">
+<span class="font-accent-text text-accent-text text-on-surface">Main Character Era ✨</span>
+<span class="font-body-sm text-body-sm text-outline">₹500 - ₹5000</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-surface-container-lowest rounded-lg p-3 ambient-shadow cursor-pointer btn-squish border border-outline-variant/30 flex flex-col aspect-[4/5] -rotate-1 mt-4 sm:mt-8">
+<div class="w-full flex-1 rounded-[1.5rem] overflow-hidden relative">
+<div class="bg-cover bg-center w-full h-full absolute inset-0" data-alt="A vibrant, aesthetic gift card design illustrating a cute, hand-drawn birthday cake with a single candle, set against a soft ivory background with tiny hand-drawn stars and squiggles. The color palette is pastel and warm, embodying a digital scrapbooking style with a slightly imperfect, organic feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHnvRuUSMmf8rHWz4668ek8KXcdAjcGiy5pNn-ShF9QQWPo9gffqpHxNeMoACNAZ3NooY_CCm_wdkJX0TSctYT6GgD_PC4E0qORNKDKOkLnVB69j6SnHEIOjNrluNywlRcghctiY5FAzPWEIx0rWIKRVVPq1fbD4hMfSkJvZaZw3A5HYotEaKdoVlS8DQYdrjp0lybfqFiIkQgn9dP8-OyFCQ_Pdb9nNf7_yQhHoxZ03eTw2BJpX53-g')"></div>
+</div>
+<div class="mt-4 px-2 flex justify-between items-end mb-2">
+<div class="flex flex-col">
+<span class="font-accent-text text-accent-text text-on-surface">Another Year Hotter 🔥</span>
+<span class="font-body-sm text-body-sm text-outline">₹500 - ₹5000</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Content: Personalization Sidebar (Sticky on LG) -->
+<aside class="w-full lg:w-96 lg:sticky lg:top-28 self-start bg-surface-container-low rounded-xl p-md ambient-shadow border border-outline-variant/20 flex flex-col gap-md">
+<h2 class="font-headline-md text-headline-md text-on-surface border-b border-outline-variant/30 pb-4">Personalize</h2>
+<!-- Amount Selection -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Select Amount (₹)</label>
+<div class="flex gap-2">
+<button class="flex-1 py-3 bg-surface-container-lowest border-2 border-primary text-primary rounded-DEFAULT font-body-sm text-body-sm font-bold btn-squish">500</button>
+<button class="flex-1 py-3 bg-surface-container-lowest border border-outline-variant text-on-surface-variant rounded-DEFAULT font-body-sm text-body-sm hover:border-primary hover:text-primary transition-colors btn-squish">1000</button>
+<button class="flex-1 py-3 bg-surface-container-lowest border border-outline-variant text-on-surface-variant rounded-DEFAULT font-body-sm text-body-sm hover:border-primary hover:text-primary transition-colors btn-squish">2000</button>
+</div>
+<input class="w-full mt-2 bg-surface-container-lowest border-2 border-outline/30 rounded-DEFAULT px-4 py-3 font-body-sm text-body-sm focus:border-primary focus:ring-0 transition-colors placeholder:text-outline-variant text-on-surface" placeholder="Custom amount" type="number"/>
+</div>
+<!-- Message -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Add a Note <span class="text-outline font-normal text-xs ml-1">(Optional)</span></label>
+<textarea class="w-full bg-surface-container-lowest border-2 border-outline/30 rounded-DEFAULT px-4 py-3 font-body-sm text-body-sm focus:border-primary focus:ring-0 transition-colors placeholder:text-outline-variant text-on-surface resize-none" placeholder="You deserve the world... 💌" rows="3"></textarea>
+</div>
+<!-- Delivery -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Delivery Date</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-2 border-outline/30 rounded-DEFAULT px-4 py-3 pl-10 font-body-sm text-body-sm focus:border-primary focus:ring-0 transition-colors text-on-surface" type="date"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant" data-icon="calendar_today">calendar_today</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-4 flex flex-col gap-3">
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-label-caps text-label-caps text-sm btn-squish flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                    Add to Cart • ₹500
+                    <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full bg-secondary-fixed text-on-secondary-fixed py-4 rounded-full font-label-caps text-label-caps text-sm btn-squish border-2 border-secondary/20">
+                    Send Instantly
+                </button>
+</div>
+<!-- Trust Badge -->
+<div class="flex items-center justify-center gap-2 text-outline text-xs mt-2">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock">lock</span>
+<span class="font-body-sm">Secure checkout</span>
+</div>
+</aside>
+</main>
+<!-- Footer -->
+<footer class="w-full px-gutter py-xl flex flex-col md:flex-row justify-between items-center gap-md bg-surface-container-low dark:bg-surface-container-lowest border-t-2 border-outline-variant/30">
+<div class="font-accent-text text-accent-text text-on-surface">
+            © 2024 Digital Gifts Paradise — A tiny digital hug.
+        </div>
+<nav class="flex gap-md font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim">
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Help Center</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Contact</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+</nav>
+</footer>
+</body></html>

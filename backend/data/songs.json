@@ -1,0 +1,37 @@
+[
+  {
+    "id": "song-1",
+    "title": "Late Night Talking",
+    "artist": "Harry Styles",
+    "duration": "2:57",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBPDJtRUewfzyPHN0Wxi_ZFOIG5Sq6J6jbDTHnLZKqT3qgVcwtWZM7HlB2tWHc_9A2E9gneb8VhLlTQVa-YZAI0mLSVOTy0kQa4RAUE6teykZcCfA3FGlzw0dmVbvA_rSrp-_ZyLPj5hQ0Bak2BAcC3YUb0pcrLuejo1nuQKmjtCGUKGYxzMsJgReTXSOvKI0OUQddOkko7-a8rXCPjoHXA6XA2n3ssYnNwENw3ejOYTM9OcpBNrNO7Qg"
+  },
+  {
+    "id": "song-2",
+    "title": "Yellow",
+    "artist": "Coldplay",
+    "duration": "4:29",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuACivTAFgaO_KVtvxyD_tTUXTfUWgZwwV2TSjAZuNkJCgTZl05ySd81YZFhZjNjiSXbRbEKniPdsf2HIDZfNiDPmgu3g9ka_oGSJLZ1YorknaDmKfJts4i5vMWpNAIlhWq8MrwbAu5Y6uyav4eC-_MSVVAQ2OYUDOb3Vgc6153bGr3Y6BQdbwsPX3729ah6mutFBhTEu1XZKeWzJi5wDzp6qyyvZO0jyTW2r7sp41pfbxRunN1593ByKw"
+  },
+  {
+    "id": "song-3",
+    "title": "Golden Hour",
+    "artist": "JVKE",
+    "duration": "3:29",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA3uolfm9NP9ZZ2iRG-29rQe5_x5ytK_5qw_zO77pUS840VHVoCHV4MXIC6t3ASTYL6CfyQGnb6SdjqV9eWd7IwSO3jgOuQcZWrYmZ_kZrdxPaF_B5jOoptV1h6QdDr3oIbhmHDjZckiMGGzM-l3nyk-RHnGsLAXyfqWSXeFXavQPyAKkPuivvMfTB-0n8j5fAzdFGqINPvdd82iS69Pq9G2W9NEqIg5UZ5lONDi5206YOC2W_2Uw5m7Q"
+  },
+  {
+    "id": "song-4",
+    "title": "Until I Found You",
+    "artist": "Stephen Sanchez",
+    "duration": "2:58",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWaRUc8tKgRCH3R48PdM0wnlAU48lhvIcwOD6eqOeYOY58WM5ifkajSvWpZC-KywZjYXmItqCVHERkG06utnT53yxu6BphmAAg-_vyXAM-jwqHRb-qORU2Mgub58rE08ANPz3Gi_u25EHbZXPJehQNYhR_7pc2LQAO5Fuw4sQK3ZnsIVQtW5PVW5xLi9fMWHgWqF6GUO_QZtdWP8VePALZa0ht5BGLQ8V_rpJ4W3GtJj--SE3CEMG3EQ"
+  },
+  {
+    "id": "song-5",
+    "title": "Lover",
+    "artist": "Taylor Swift",
+    "duration": "3:41",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCa94qwjL098W5Gwenrjsm6Gf2-NcsJU6qx5urin2Y4kn5ePUzvtCpGPBWyqK-GnEK7GBMXwipTyyHPfH4Y-FWjeqA9xBaFtwxUjJTpujEfJ53yhlsSjD3R7kq8L41VNliIu3xKJ77esNS-aOhag2dIlO9mbiqfbH9AAp_sQuPaXt6FagUb8Lvh7tzioYXSDJXfEMJCnUJVnsuHyYuF88CpOcf2Cai3kI89Su2R3YRr2Ht32cthzMy3jQ"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "bouquet-seed-1",
+    "flowerId": "roses",
+    "flowerName": "Red Roses",
+    "wrappingColor": "pink",
+    "ribbonColor": "brown",
+    "recipientName": "Sarah",
+    "noteMessage": "For Sarah 🌷\nMay your days bloom with as much joy as you bring to mine!",
+    "createdAt": "2026-09-22T06:31:34.827Z"
+  }
+]

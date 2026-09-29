@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Gifts Paradise ✨</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=Quicksand:wght@400..700&amp;family=Be+Vietnam+Pro:wght@400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#613f2c",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#9e4037",
+                        "on-tertiary-fixed-variant": "#4f4064",
+                        "on-surface": "#2b1613",
+                        "surface": "#fff8f6",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#edbca4",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fff8f6",
+                        "tertiary-fixed": "#eddcff",
+                        "secondary-fixed": "#ffdbca",
+                        "on-primary-fixed": "#410002",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#7a5541",
+                        "inverse-surface": "#422a26",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "surface-dim": "#f8d1cb",
+                        "on-tertiary-fixed": "#221536",
+                        "primary": "#9e4037",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#76231d",
+                        "tertiary": "#67587d",
+                        "surface-container": "#ffe9e5",
+                        "surface-variant": "#ffdad4",
+                        "background": "#fff8f6",
+                        "tertiary-container": "#b7a5cf",
+                        "inverse-on-surface": "#ffedea",
+                        "outline-variant": "#dcc0bd",
+                        "secondary-container": "#ffcdb4",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#d2bfea",
+                        "on-surface-variant": "#564240",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#483a5d",
+                        "outline": "#89726f",
+                        "on-background": "#2b1613",
+                        "inverse-primary": "#ffb4aa",
+                        "surface-container-low": "#fff0ee",
+                        "surface-container-highest": "#ffdad4",
+                        "primary-container": "#ff8b7e",
+                        "primary-fixed": "#ffdad5",
+                        "on-secondary-fixed": "#2f1506",
+                        "surface-container-high": "#ffe2dd",
+                        "secondary": "#7c5642",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#7f2922"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Quicksand"],
+                        "label-caps": ["Be Vietnam Pro"],
+                        "body-sm": ["Quicksand"],
+                        "accent-text": ["Bricolage Grotesque"],
+                        "display-mobile": ["Quicksand"],
+                        "display-lg": ["Quicksand"],
+                        "body-lg": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "500" }],
+                        "accent-text": ["20px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "display-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 253, 245, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(220, 192, 189, 0.3);
+        }
+        .tape-effect::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            width: 80px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 1px 2px rgba(141, 110, 99, 0.1);
+            z-index: 10;
+            border-radius: 2px;
+        }
+        .polaroid-shadow {
+            box-shadow: 0 20px 40px -10px rgba(141, 110, 99, 0.15), 0 0 1px rgba(141, 110, 99, 0.1);
+        }
+        .sticker {
+            filter: drop-shadow(0 2px 4px rgba(141, 110, 99, 0.2));
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .sticker:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .blob-bg {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,218,212,0.4) 0%, rgba(255,248,246,0) 70%);
+            z-index: -1;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-sm min-h-screen overflow-x-hidden">
+<!-- Navigation Shell (TopAppBar) -->
+<header class="flex justify-between items-center w-full px-gutter py-4 sticky top-0 z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-[0_20px_50px_rgba(141,110,99,0.08)]">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
+            Digital Gifts Paradise ✨
+        </div>
+<nav class="hidden md:flex gap-md font-label-caps text-label-caps items-center">
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 hover:scale-105 transition-transform duration-200 ease-out" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Digital Scraps</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Digital Bouquets</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Customize Gift</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Gift Cards</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:scale-105 transition-transform duration-200 ease-out" href="#">Playlists</a>
+</nav>
+<div class="flex items-center gap-sm">
+<button class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-high text-on-surface hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-high text-on-surface hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="bg-primary text-on-primary px-sm py-2 rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform duration-200 ease-out flex items-center gap-2 active:scale-95">
+                Create a Gift ✨
+            </button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max mx-auto px-gutter py-xl relative">
+<div class="blob-bg top-[-100px] left-[-100px]"></div>
+<div class="blob-bg top-[40%] right-[-200px]" style="background: radial-gradient(circle, rgba(237,220,255,0.4) 0%, rgba(255,248,246,0) 70%);"></div>
+<!-- Hero Section -->
+<section class="flex flex-col lg:flex-row items-center justify-between gap-xl mb-xl pt-lg relative z-10">
+<div class="w-full lg:w-1/2 flex flex-col gap-md items-start">
+<div class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full font-label-caps text-label-caps sticker inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">stars</span> New: Interactive Memories
+                </div>
+<h1 class="font-display-lg text-display-lg text-on-background relative">
+                    Send a little piece of your heart.
+                    <svg class="absolute -bottom-4 -right-8 w-16 h-16 text-primary sticker" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 10C50 10 30 30 10 30C30 30 30 50 30 50C30 50 50 30 70 30C50 30 50 10 50 10Z" fill="currentColor" opacity="0.8"></path>
+<path d="M70 60C70 60 80 70 90 70C80 70 80 80 80 80C80 80 70 70 60 70C70 70 70 60 70 60Z" fill="currentColor" opacity="0.6"></path>
+</svg>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                    Curate digital scrapbooks, bouquets, and playlists that feel as warm and intimate as a handwritten note, designed especially for the people you miss the most.
+                </p>
+<div class="flex gap-4 mt-sm">
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-caps text-label-caps hover:scale-105 active:scale-95 transition-transform shadow-lg shadow-primary/20 flex items-center gap-2">
+                        Start Curating <span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<button class="bg-surface text-primary border-2 border-primary-fixed-dim px-lg py-sm rounded-full font-label-caps text-label-caps hover:bg-surface-container transition-colors flex items-center gap-2">
+                        Explore Examples
+                    </button>
+</div>
+</div>
+<div class="w-full lg:w-1/2 relative h-[500px] flex items-center justify-center">
+<!-- Decorative Scrapbook Composition -->
+<div class="absolute w-[280px] h-[340px] bg-surface p-sm pb-lg rounded-DEFAULT polaroid-shadow tape-effect transform -rotate-6 z-20 left-10 hover:rotate-0 transition-transform duration-500">
+<div class="w-full h-full bg-surface-container rounded-sm overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A beautifully crafted digital scrapbook page featuring glowing soft colors, a polaroid photo of two friends laughing in a sunny park, surrounded by hand-drawn digital flower stickers and shimmering washi tape. Modern light-mode aesthetic with warm cream and coral hues, soft shadows, cozy and nostalgic mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZzVZ61EUEkbPCgICYbvVGndVsChbIOmw0-HLX9liREnTuTLvY2TjuHQ5ToVJhLNLesLqTgO3edQ65jl60GTl_X2FdDlykTo9JiK2mEkT1RBcUxZrgXI_IpTj_Ug5spx6yp1p9vdz3J1IsCimswVy6vCY6k20DumW4w1ASG1IMnK0guB7raZ1wMTBW7PAlwUzcA7C7MXoUSfJYdEPDy87H427NJw3mHXhL_8MtCfZ9H4BVHxe4IyiJrw"/>
+</div>
+<div class="font-accent-text text-accent-text text-center mt-sm text-on-surface">Miss you &lt;3</div>
+</div>
+<div class="absolute w-[240px] h-[300px] bg-surface p-sm pb-lg rounded-DEFAULT polaroid-shadow transform rotate-12 z-10 right-10 top-20">
+<div class="w-full h-full bg-tertiary-fixed rounded-sm overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A stylized digital bouquet of luminous, pastel-colored flowers rendered in a modern, semi-translucent 3D style, wrapped in a digital scrapbook-style paper overlay. Light, airy atmosphere with soft ambient lighting on a creamy white background. Tactile and magical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7rja7hsxjQlPU2Phq3W9UTsbLQjhKAO6JC7OghWdrJ1f4_nr4WV1XkCf79BaAODpEA1BPJeQqgP0W8-E4LR1cC90F9uFg2tjtey7tYHnEpU0nc-rTSdv2fOH_i-o5xa_3LgiQ_apJS2pezjb9r0nGIf7QL_6jwhL0wPoCVxHUE27PQw-_Qu8wa3ffVm5pTFMHmuc57Vz8ptdhIQEtD40U4BfLUFm52IHtcsnIIPF7SpY1DYaEPELmPQ"/>
+</div>
+</div>
+<svg class="absolute top-10 right-1/4 w-12 h-12 text-secondary sticker z-30" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+</svg>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full px-gutter py-xl flex flex-col md:flex-row justify-between items-center gap-md bg-surface-container-low dark:bg-surface-container-lowest border-t-2 border-outline-variant/30">
+<div class="font-accent-text text-accent-text text-on-surface">
+            Digital Gifts Paradise ✨
+        </div>
+<div class="flex gap-md font-label-caps text-label-caps">
+<a class="text-on-surface-variant dark:text-outline opacity-80 hover:opacity-100 hover:text-primary transition-colors duration-200" href="#">Help Center</a>
+<a class="text-on-surface-variant dark:text-outline opacity-80 hover:opacity-100 hover:text-primary transition-colors duration-200" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-outline opacity-80 hover:opacity-100 hover:text-primary transition-colors duration-200" href="#">Contact</a>
+<a class="text-on-surface-variant dark:text-outline opacity-80 hover:opacity-100 hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
+</div>
+<div class="font-body-sm text-body-sm text-secondary dark:text-secondary-fixed-dim">
+            © 2024 Digital Gifts Paradise — A tiny digital hug.
+        </div>
+</footer>
+</body></html>

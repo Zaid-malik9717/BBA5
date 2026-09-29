@@ -1,0 +1,27 @@
+[
+  {
+    "id": "playlist-seed-1",
+    "playlistName": "Songs That Remind Me of You 💗",
+    "recipient": "Sarah",
+    "sender": "Alex",
+    "createdAt": "2026-09-22T06:31:34.827Z",
+    "tracks": [
+      {
+        "id": "trk-1",
+        "title": "Late Night Talking",
+        "artist": "Harry Styles",
+        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBPDJtRUewfzyPHN0Wxi_ZFOIG5Sq6J6jbDTHnLZKqT3qgVcwtWZM7HlB2tWHc_9A2E9gneb8VhLlTQVa-YZAI0mLSVOTy0kQa4RAUE6teykZcCfA3FGlzw0dmVbvA_rSrp-_ZyLPj5hQ0Bak2BAcC3YUb0pcrLuejo1nuQKmjtCGUKGYxzMsJgReTXSOvKI0OUQddOkko7-a8rXCPjoHXA6XA2n3ssYnNwENw3ejOYTM9OcpBNrNO7Qg",
+        "note": "This reminds me of our late-night calls when we first met.",
+        "duration": "2:57"
+      },
+      {
+        "id": "trk-2",
+        "title": "Yellow",
+        "artist": "Coldplay",
+        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuACivTAFgaO_KVtvxyD_tTUXTfUWgZwwV2TSjAZuNkJCgTZl05ySd81YZFhZjNjiSXbRbEKniPdsf2HIDZfNiDPmgu3g9ka_oGSJLZ1YorknaDmKfJts4i5vMWpNAIlhWq8MrwbAu5Y6uyav4eC-_MSVVAQ2OYUDOb3Vgc6153bGr3Y6BQdbwsPX3729ah6mutFBhTEu1XZKeWzJi5wDzp6qyyvZO0jyTW2r7sp41pfbxRunN1593ByKw",
+        "note": "Look at the stars, look how they shine for you ⭐",
+        "duration": "4:29"
+      }
+    ]
+  }
+]
