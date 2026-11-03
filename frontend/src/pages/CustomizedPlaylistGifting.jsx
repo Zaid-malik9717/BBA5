@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { api } from '../services/api';
 
 export default function CustomizedPlaylistGifting({ setActivePage }) {
   const [playlistName, setPlaylistName] = useState('Songs That Remind Me of You 💗');
@@ -6,6 +7,29 @@ export default function CustomizedPlaylistGifting({ setActivePage }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+  const [isSaving, setIsSaving] = useState(false);
+  const [savedNotification, setSavedNotification] = useState(null);
+
+  const handleSavePlaylist = async (isDraft = false) => {
+    setIsSaving(true);
+    try {
+      const res = await api.createPlaylist({
+        playlistName,
+        recipient,
+        tracks,
+        isDraft,
+      });
+      setSavedNotification({
+        type: isDraft ? 'draft' : 'final',
+        message: res.message || (isDraft ? 'Draft saved to backend!' : 'Playlist finalized!'),
+      });
+      setTimeout(() => setSavedNotification(null), 5000);
+    } catch (err) {
+      alert('Error saving playlist: ' + err.message);
+    } finally {
+      setIsSaving(false);
+    }
+  };
 
   const [tracks, setTracks] = useState([
     {
@@ -359,16 +383,24 @@ export default function CustomizedPlaylistGifting({ setActivePage }) {
 
           {/* Actions */}
           <div className="flex flex-col gap-3">
+            {savedNotification && (
+              <div className="bg-primary text-on-primary p-3 rounded-2xl text-xs font-label-caps flex items-center justify-center gap-2 animate-fadeIn shadow-md">
+                <span className="material-symbols-outlined text-sm">check_circle</span>
+                <span>{savedNotification.message}</span>
+              </div>
+            )}
             <button 
-              onClick={() => alert(`🎉 Playlist "${playlistName}" finalized for ${recipient}! Link generated to share.`)}
-              className="w-full bg-primary-container text-on-primary-container font-headline-md text-base py-4 rounded-full shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 font-bold"
+              disabled={isSaving}
+              onClick={() => handleSavePlaylist(false)}
+              className="w-full bg-primary-container text-on-primary-container font-headline-md text-base py-4 rounded-full shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 font-bold disabled:opacity-60"
             >
               <span className="material-symbols-outlined text-[20px]">magic_button</span>
-              Finalize Playlist
+              {isSaving ? 'Saving to Cloud... ⏳' : 'Finalize Playlist'}
             </button>
             <button 
-              onClick={() => alert("Draft saved to your browser storage! ✨")}
-              className="w-full bg-surface-container text-secondary font-body-sm font-bold py-3 rounded-full border border-outline-variant/30 hover:bg-surface-container-high transition-colors"
+              disabled={isSaving}
+              onClick={() => handleSavePlaylist(true)}
+              className="w-full bg-surface-container text-secondary font-body-sm font-bold py-3 rounded-full border border-outline-variant/30 hover:bg-surface-container-high transition-colors disabled:opacity-60"
             >
               Save as Draft
             </button>

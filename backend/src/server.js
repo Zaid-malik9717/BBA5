@@ -6,12 +6,34 @@ import apiRoutes from './routes/index.js';
 
 const app = express();
 
-// Middleware
+// Comprehensive CORS configuration
+const allowedOrigins = [
+  'https://bba-5.vercel.app',
+  'http://localhost:5173',
+  'http://localhost:3000'
+];
+
 app.use(cors({
-  origin: '*', // Allow development frontend requests
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: (origin, callback) => {
+    // allow requests with no origin (like mobile apps, curl, or server-to-server)
+    if (!origin) return callback(null, true);
+    if (
+      allowedOrigins.includes(origin) ||
+      origin.endsWith('.vercel.app') ||
+      origin.includes('localhost')
+    ) {
+      return callback(null, true);
+    }
+    // Fallback: allow all origins in open API mode
+    return callback(null, true);
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  credentials: true
 }));
+
+// Explicit OPTIONS preflight handling
+app.options('*', cors());
 
 app.use(morgan('dev'));
 app.use(express.json());
@@ -51,7 +73,7 @@ app.use((err, req, res, next) => {
 
 // Start server
 app.listen(config.port, () => {
-  console.log(`🌸 Digital Gifts Paradise API running on http://localhost:${config.port}`);
+  console.log(`🌸 Digital Gifts Paradise API running on port ${config.port}`);
   console.log(`✨ Environment: ${config.nodeEnv}`);
 });
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { api } from '../services/api';
 
 export default function DigitalBouquetsVirtualFlowers({ setActivePage }) {
   const [selectedFlower, setSelectedFlower] = useState('roses');
@@ -6,6 +7,7 @@ export default function DigitalBouquetsVirtualFlowers({ setActivePage }) {
   const [ribbonColor, setRibbonColor] = useState('brown'); // red, brown, purple, gold
   const [noteMessage, setNoteMessage] = useState('For Sarah 🌷\nMay your days bloom with as much joy as you bring to mine!');
   const [sentSuccess, setSentSuccess] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const flowers = [
     { id: 'roses', name: 'Roses', emoji: '🌹', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBWaRUc8tKgRCH3R48PdM0wnlAU48lhvIcwOD6eqOeYOY58WM5ifkajSvWpZC-KywZjYXmItqCVHERkG06utnT53yxu6BphmAAg-_vyXAM-jwqHRb-qORU2Mgub58rE08ANPz3Gi_u25EHbZXPJehQNYhR_7pc2LQAO5Fuw4sQK3ZnsIVQtW5PVW5xLi9fMWHgWqF6GUO_QZtdWP8VePALZa0ht5BGLQ8V_rpJ4W3GtJj--SE3CEMG3EQ' },
@@ -17,9 +19,24 @@ export default function DigitalBouquetsVirtualFlowers({ setActivePage }) {
 
   const currentFlowerObj = flowers.find((f) => f.id === selectedFlower) || flowers[0];
 
-  const handleSend = () => {
-    setSentSuccess(true);
-    setTimeout(() => setSentSuccess(false), 5000);
+  const handleSend = async () => {
+    setIsSending(true);
+    try {
+      await api.sendBouquet({
+        flowerId: selectedFlower,
+        flowerName: currentFlowerObj.name,
+        wrappingColor,
+        ribbonColor,
+        recipientName: 'Sarah',
+        noteMessage,
+      });
+      setSentSuccess(true);
+      setTimeout(() => setSentSuccess(false), 5000);
+    } catch (err) {
+      alert('Could not deliver bouquet: ' + err.message);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -214,10 +231,11 @@ export default function DigitalBouquetsVirtualFlowers({ setActivePage }) {
           {/* Floating CTA */}
           <div className="absolute bottom-md left-0 right-0 flex justify-center z-30">
             <button 
+              disabled={isSending}
               onClick={handleSend}
-              className="squishy-btn bg-primary text-on-primary font-headline-md text-headline-md px-xl py-sm rounded-full shadow-[0_10px_20px_rgba(158,64,55,0.3)] hover:shadow-[0_15px_25px_rgba(158,64,55,0.4)] flex items-center gap-2"
+              className="squishy-btn bg-primary text-on-primary font-headline-md text-headline-md px-xl py-sm rounded-full shadow-[0_10px_20px_rgba(158,64,55,0.3)] hover:shadow-[0_15px_25px_rgba(158,64,55,0.4)] flex items-center gap-2 disabled:opacity-60"
             >
-              <span>Send Bouquet 💐</span>
+              <span>{isSending ? 'Delivering to Cloud... ⏳' : 'Send Bouquet 💐'}</span>
             </button>
           </div>
         </div>

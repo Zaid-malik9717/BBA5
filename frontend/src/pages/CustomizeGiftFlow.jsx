@@ -1,13 +1,55 @@
 import React, { useState } from 'react';
+import { api } from '../services/api';
 
 export default function CustomizeGiftFlow({ setActivePage }) {
   const [currentStep, setCurrentStep] = useState(3);
   const [recipientName, setRecipientName] = useState('Sarah & Alex');
   const [noteMessage, setNoteMessage] = useState('Thank you for always being my sunshine. Happy birthday! 🎂✨');
-  const [selectedMusic, setSelectedMusic] = useState('Golden Hour - J.VKE');
+  const [selectedMusic, setSelectedMusic] = useState('Golden Hour - JVKE');
   const [activeModal, setActiveModal] = useState(null); // 'photos' | 'note' | 'stickers' | 'music'
   const [selectedSticker, setSelectedSticker] = useState('💖');
   const [photoUrl, setPhotoUrl] = useState('https://lh3.googleusercontent.com/aida-public/AB6AXuAZzVZ61EUEkbPCgICYbvVGndVsChbIOmw0-HLX9liREnTuTLvY2TjuHQ5ToVJhLNLesLqTgO3edQ65jl60GTl_X2FdDlykTo9JiK2mEkT1RBcUxZrgXI_IpTj_Ug5spx6yp1p9vdz3J1IsCimswVy6vCY6k20DumW4w1ASG1IMnK0guB7raZ1wMTBW7PAlwUzcA7C7MXoUSfJYdEPDy87H427NJw3mHXhL_8MtCfZ9H4BVHxe4IyiJrw');
+  const [isUploading, setIsUploading] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [sentGiftData, setSentGiftData] = useState(null);
+  const [copiedLink, setCopiedLink] = useState(false);
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setIsUploading(true);
+    try {
+      const res = await api.uploadPhoto(file);
+      if (res?.data?.url) {
+        setPhotoUrl(api.resolveMediaUrl(res.data.url));
+        setActiveModal(null);
+      }
+    } catch (err) {
+      alert('Upload failed: ' + err.message);
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  const handleSendGift = async () => {
+    setIsSubmitting(true);
+    try {
+      const res = await api.createGift({
+        recipientName,
+        senderName: 'Someone Special',
+        noteMessage,
+        selectedMusic,
+        selectedSticker,
+        photoUrl,
+        status: 'sent',
+      });
+      setSentGiftData(res);
+    } catch (err) {
+      alert('Could not save gift to backend: ' + err.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const steps = [
     { num: '01', title: 'Recipient' },
@@ -180,13 +222,14 @@ export default function CustomizeGiftFlow({ setActivePage }) {
               <span className="material-symbols-outlined">arrow_back</span> Back
             </button>
             <button 
+              disabled={isSubmitting}
               onClick={() => {
                 if (currentStep < 5) setCurrentStep(currentStep + 1);
-                else alert("Gift ready! Ready to send to " + recipientName + " 🎉");
+                else handleSendGift();
               }}
-              className="bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps hover:scale-105 transition-transform flex items-center gap-2 shadow-lg"
+              className="bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps hover:scale-105 transition-transform flex items-center gap-2 shadow-lg disabled:opacity-60"
             >
-              <span>{currentStep === 5 ? 'Send Gift Now 💌' : 'Next: Preview'}</span>
+              <span>{isSubmitting ? 'Saving to Cloud... ⏳' : currentStep === 5 ? 'Send Gift Now 💌' : 'Next: Preview'}</span>
               <span className="material-symbols-outlined">arrow_forward</span>
             </button>
           </div>
@@ -294,7 +337,24 @@ export default function CustomizeGiftFlow({ setActivePage }) {
             {/* Photos Selector */}
             {activeModal === 'photos' && (
               <div className="space-y-4">
-                <p className="text-xs text-on-surface-variant">Choose a photo preset or paste image URL:</p>
+                <div className="p-3 border-2 border-dashed border-primary/40 rounded-xl text-center bg-surface-container-low">
+                  <label className="cursor-pointer block">
+                    <span className="material-symbols-outlined text-3xl text-primary mb-1">cloud_upload</span>
+                    <span className="block font-label-caps text-xs text-primary font-bold">
+                      {isUploading ? 'Uploading to Render Backend...' : 'Upload Image from Computer'}
+                    </span>
+                    <span className="block text-[10px] text-on-surface-variant mt-0.5">JPG, PNG, GIF, WEBP up to 10MB</span>
+                    <input 
+                      type="file" 
+                      accept="image/*" 
+                      onChange={handleFileUpload} 
+                      className="hidden" 
+                      disabled={isUploading}
+                    />
+                  </label>
+                </div>
+
+                <p className="text-xs text-on-surface-variant">Or choose a preset memory:</p>
                 <div className="grid grid-cols-2 gap-2">
                   {[
                     'https://lh3.googleusercontent.com/aida-public/AB6AXuAZzVZ61EUEkbPCgICYbvVGndVsChbIOmw0-HLX9liREnTuTLvY2TjuHQ5ToVJhLNLesLqTgO3edQ65jl60GTl_X2FdDlykTo9JiK2mEkT1RBcUxZrgXI_IpTj_Ug5spx6yp1p9vdz3J1IsCimswVy6vCY6k20DumW4w1ASG1IMnK0guB7raZ1wMTBW7PAlwUzcA7C7MXoUSfJYdEPDy87H427NJw3mHXhL_8MtCfZ9H4BVHxe4IyiJrw',
@@ -365,6 +425,69 @@ export default function CustomizeGiftFlow({ setActivePage }) {
                 ))}
               </div>
             )}
+          </div>
+        </div>
+      )}
+      {/* Success Modal When Gift is Saved to Backend */}
+      {sentGiftData && (
+        <div className="fixed inset-0 bg-on-surface/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-surface rounded-3xl max-w-lg w-full p-6 md:p-8 ambient-shadow border border-primary/20 text-center animate-fadeIn relative">
+            <div className="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+              🎉
+            </div>
+            <h2 className="font-display-lg text-2xl md:text-3xl text-primary font-bold mb-2">
+              Gift Saved in Cloud!
+            </h2>
+            <p className="text-on-surface-variant text-sm mb-6">
+              Your personalized digital memory for <span className="font-bold text-primary">{recipientName}</span> is safely created on the backend.
+            </p>
+
+            <div className="bg-surface-container-low p-4 rounded-2xl mb-6 text-left border border-outline-variant/30">
+              <div className="flex justify-between items-center mb-1">
+                <span className="text-xs font-label-caps text-on-surface-variant">Share Code</span>
+                <span className="text-xs font-mono font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">
+                  {sentGiftData.data?.shareCode || 'GIFT-123'}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 mt-2">
+                <input 
+                  readOnly 
+                  value={`${window.location.origin}/?gift=${sentGiftData.data?.shareCode || ''}`}
+                  className="w-full text-xs bg-surface p-2.5 rounded-lg border border-outline-variant font-mono"
+                />
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText(`${window.location.origin}/?gift=${sentGiftData.data?.shareCode || ''}`);
+                    setCopiedLink(true);
+                    setTimeout(() => setCopiedLink(false), 3000);
+                  }}
+                  className="bg-primary text-on-primary px-4 py-2.5 rounded-lg text-xs font-label-caps shrink-0 font-bold hover:scale-105 transition-transform"
+                >
+                  {copiedLink ? 'Copied! ✨' : 'Copy Link'}
+                </button>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={() => {
+                  setSentGiftData(null);
+                  setCurrentStep(1);
+                }}
+                className="flex-1 py-3 rounded-full border-2 border-primary text-primary font-label-caps text-xs font-bold hover:bg-primary-container/20 transition-colors"
+              >
+                Create Another Gift
+              </button>
+              <button
+                onClick={() => {
+                  setSentGiftData(null);
+                  setActivePage('home');
+                }}
+                className="flex-1 py-3 bg-primary text-on-primary rounded-full font-label-caps text-xs font-bold shadow-md hover:scale-105 transition-transform"
+              >
+                Return Home
+              </button>
+            </div>
           </div>
         </div>
       )}

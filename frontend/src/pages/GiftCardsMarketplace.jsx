@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { api } from '../services/api';
 
 export default function GiftCardsMarketplace({ setActivePage }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -8,6 +9,7 @@ export default function GiftCardsMarketplace({ setActivePage }) {
   const [personalNote, setPersonalNote] = useState('You deserve the world... 💌');
   const [deliveryDate, setDeliveryDate] = useState('2026-09-20');
   const [orderNotification, setOrderNotification] = useState(null);
+  const [isOrdering, setIsOrdering] = useState(false);
 
   const categories = ['All', 'Birthday', 'Friendship', 'Love', 'Just Because'];
 
@@ -51,14 +53,44 @@ export default function GiftCardsMarketplace({ setActivePage }) {
   const selectedCard = giftCards.find((c) => c.id === selectedCardId) || giftCards[0];
   const activeAmount = customAmount ? Number(customAmount) : amount;
 
-  const handleAddToCart = () => {
-    setOrderNotification(`Added "${selectedCard.title}" (₹${activeAmount}) to your Cart! 🛍️`);
-    setTimeout(() => setOrderNotification(null), 4000);
+  const handleAddToCart = async () => {
+    setIsOrdering(true);
+    try {
+      const res = await api.orderGiftCard({
+        cardId: selectedCard.id,
+        cardTitle: selectedCard.title,
+        amount: activeAmount,
+        personalNote,
+        deliveryDate,
+        instant: false,
+      });
+      setOrderNotification(`Order saved to backend! Voucher: ${res.voucherCode} (₹${activeAmount}) 🛍️`);
+      setTimeout(() => setOrderNotification(null), 6000);
+    } catch (err) {
+      alert('Order failed: ' + err.message);
+    } finally {
+      setIsOrdering(false);
+    }
   };
 
-  const handleSendInstant = () => {
-    setOrderNotification(`🚀 Instant delivery initiated for "${selectedCard.title}" to your loved one!`);
-    setTimeout(() => setOrderNotification(null), 4000);
+  const handleSendInstant = async () => {
+    setIsOrdering(true);
+    try {
+      const res = await api.orderGiftCard({
+        cardId: selectedCard.id,
+        cardTitle: selectedCard.title,
+        amount: activeAmount,
+        personalNote,
+        deliveryDate,
+        instant: true,
+      });
+      setOrderNotification(`🚀 Instant voucher code ${res.voucherCode} issued by backend!`);
+      setTimeout(() => setOrderNotification(null), 6000);
+    } catch (err) {
+      alert('Instant order failed: ' + err.message);
+    } finally {
+      setIsOrdering(false);
+    }
   };
 
   return (
@@ -227,17 +259,19 @@ export default function GiftCardsMarketplace({ setActivePage }) {
           {/* Actions */}
           <div className="mt-4 flex flex-col gap-3">
             <button 
+              disabled={isOrdering}
               onClick={handleAddToCart}
-              className="w-full bg-primary text-on-primary py-4 rounded-full font-label-caps text-label-caps text-sm btn-squish flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all"
+              className="w-full bg-primary text-on-primary py-4 rounded-full font-label-caps text-label-caps text-sm btn-squish flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-60"
             >
-              <span>Add to Cart • ₹{activeAmount || 500}</span>
+              <span>{isOrdering ? 'Placing Order... ⏳' : `Add to Cart • ₹${activeAmount || 500}`}</span>
               <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
             </button>
             <button 
+              disabled={isOrdering}
               onClick={handleSendInstant}
-              className="w-full bg-secondary-fixed text-on-secondary-fixed py-4 rounded-full font-label-caps text-label-caps text-sm btn-squish border-2 border-secondary/20 hover:scale-[1.02] active:scale-95 transition-all"
+              className="w-full bg-secondary-fixed text-on-secondary-fixed py-4 rounded-full font-label-caps text-label-caps text-sm btn-squish border-2 border-secondary/20 hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-60"
             >
-              Send Instantly ⚡
+              {isOrdering ? 'Generating Voucher... ⚡' : 'Send Instantly ⚡'}
             </button>
           </div>
         </aside>
